@@ -4,16 +4,12 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import styled from "styled-components";
+import logoSwiss from "../Assets/Images/swisscalcLogo.png";
 
-const Logo = styled(Typography)`
-  font-size: 2.3rem;
-  font-family: Helvetica;
-  color: white;
-  span{
-    background:red;
-    padding:0px 6.5px;
-    border-radius:6.5px;
-  }
+const ImageLogo = styled.img`
+  margin-top: 2%;
+  margin-left: 2%;
+  cursor: pointer;
 `;
 
 function Navbar() {
@@ -22,7 +18,7 @@ function Navbar() {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="fixed" color="transparent" elevation={0}>
           <Toolbar>
-            <Logo> swisscalc <span>+</span> </Logo>
+            <ImageLogo src={logoSwiss}></ImageLogo>
           </Toolbar>
         </AppBar>
       </Box>
