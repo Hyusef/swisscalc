@@ -8,12 +8,8 @@ const MainHeaderContainer = styled.div`
   background: linear-gradient(90deg, #e74d4d, #8c000c);
   background-size: 200% 100%;
   animation: gradient 30s alternate infinite;
-  position: absolute;
-  top: 0;
-  left: 0;
   height: 80vh;
   width: 100%;
-
   @keyframes gradient {
     0% {
       background-position: 0%;
@@ -51,8 +47,8 @@ function Header() {
     <MainHeaderContainer>
       <Navbar />
       <HeadersContainer>
-        <Headers>Multi-Purpose Swiss Calculator</Headers>
-        <p>Just like the Swiss knife, the Swiss calc is a powerful tool.</p>
+        <Headers>Multi-purpose Swiss Calculator</Headers>
+        <p>Just like the Swiss knife, the Swiss calc™ is a powerful tool.</p>
       </HeadersContainer>
     </MainHeaderContainer>
   );

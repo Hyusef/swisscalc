@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" color="transparent" elevation={0}>
+        <AppBar position="absolute" color="transparent" elevation={0}>
           <Toolbar>
             <ImageLogo src={logoSwiss}></ImageLogo>
           </Toolbar>
