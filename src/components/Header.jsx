@@ -1,8 +1,13 @@
 import React from "react";
 import Navbar from "./Navbar";
 import styled from "styled-components";
+import Particles from "react-tsparticles";
 
-const MainHeaderContainer = styled.div`
+
+
+
+
+const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
   background: linear-gradient(90deg, #e74d4d, #8c000c);
@@ -18,6 +23,16 @@ const MainHeaderContainer = styled.div`
       background-position: 100%;
     }
   }
+ }
+.particles{
+  top:10%;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 10;
+}
+}
 `;
 
 const Imgu = styled.img`
@@ -42,15 +57,69 @@ const HeadersContainer = styled.div`
   }
 `;
 
+/*"../Assets/Images/swisscalcLogo.png" */
+
 function Header() {
   return (
-    <MainHeaderContainer>
+
+    <HeaderContainer>
+          <Particles
+          className="particles"
+          
+            params={
+              {fullScreen: {
+                enable: false,zIndex:0
+              },
+              fpsLimit: 60,
+              particles: {
+                links: {
+                  color: "white",
+                  distance: 150,
+                  enable: false,
+                  opacity: 0.4,
+                  width: 1,
+                },
+                move: {
+                  attract: { enable: false, rotateX: 600, rotateY: 1200 },
+                  bounce: true,
+                  direction: "none",
+                  enable: true,
+                  out_mode: "out",
+                  random: false,
+                  speed: 2,
+                  straight: false,
+                },
+                number: { density: { enable: true, area: 800 }, value: 20 },
+                shape: {
+                  character: [
+                    {
+                      fill: true,
+                      font: "Verdana",
+                      value: ["✙"],
+                      style: "",
+                      weight: 400,
+                    },
+                  ],
+                  stroke: { color: "white", width: 1 },
+                  type: "char",
+                },
+                size: {
+                  anim: { enable: true, minimumValue: 8, speed: 10, sync: false },
+                  random: { minimumValue: 8, enable: true },
+                  value: 32,
+                },
+              },
+              detectRetina: true,
+            }}
+          />
       <Navbar />
       <HeadersContainer>
         <Headers>Multi-purpose Swiss Calculator</Headers>
         <p>Just like the Swiss knife, the Swiss calc™ is a powerful tool.</p>
       </HeadersContainer>
-    </MainHeaderContainer>
+    </HeaderContainer>
+
+
   );
 }
 export default Header;
