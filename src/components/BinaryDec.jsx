@@ -4,16 +4,23 @@ import styled from "styled-components";
 import Chip from "@mui/material/Chip";
 import { useState } from "react";
 import swal from "sweetalert";
+import { motion } from "framer-motion";
 
 const CalcContainer = styled(Paper)`
   width: 300px;
-  padding: 50px;
-  margin: 50px;
-`;
+  text-align: center;
+  dispay: flex;
+  flex-direction: row;
+  border: 1px solid pink;
+  .chip {
+  }
 
-var binary = "101101";
-var decimal = parseInt(binary, 2); /*Binary to decimal */
-/*Number(decimal).toString(2)) Decimal To Binary */
+  .chipContainer {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0px;
+  }
+`;
 
 function CalcCard() {
   const [outPut, setOutPut] = useState("");
@@ -24,7 +31,7 @@ function CalcCard() {
   };
 
   const digits = input.split("").map((el) => Number(el));
-  const notBinary = (val) => val == 1 || val == 0;
+  const notBinary = (val) => val === 1 || val === 0;
 
   const BinaryToDecimal = () => {
     if (input === "" || !digits.every(notBinary)) {
@@ -37,6 +44,7 @@ function CalcCard() {
   const DecimalToBinary = () => {
     if (input === "" || digits[0] == 0) {
       swal("Error", "Please Enter A Decimal Number", "error");
+      return;
     }
     setOutPut(Number(input).toString(2));
   };
@@ -51,16 +59,20 @@ function CalcCard() {
   return (
     <CalcContainer>
       <h2>Binary 🔄 Decimal </h2>    
-      <Chip
-        variant="outlined"
-        label="Binary To Decimal"
-        onClick={BinaryToDecimal}
-      />
-      <Chip
-        variant="outlined"
-        label="Decimal To Binary"
-        onClick={DecimalToBinary}
-      />
+      <div className="chipContainer">
+        <Chip
+          className="chip"
+          variant="outlined"
+          label="Binary To Decimal"
+          onClick={BinaryToDecimal}
+        />
+        <Chip
+          className="chip"
+          variant="outlined"
+          label="Decimal To Binary"
+          onClick={DecimalToBinary}
+        />
+      </div>
       <input
         required
         name="number"
