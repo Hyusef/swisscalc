@@ -30,6 +30,7 @@ const HeaderContainer = styled.div`
   margin: 0;
   padding: 0;
   width: 100%;
+  height:70vh;
   z-index: 10;
 }
 }
@@ -89,7 +90,7 @@ function Header() {
                   speed: 2,
                   straight: false,
                 },
-                number: { density: { enable: true, area: 800 }, value: 20 },
+                number: { density: { enable: true, area: 800 }, value: 8 },
                 shape: {
                   character: [
                     {
