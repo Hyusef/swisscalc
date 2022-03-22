@@ -25,9 +25,25 @@ const CalcContainer = styled(Paper)`
 
 function HexRgb() {
     return (
-        <div>
-            
+        <CalcContainer>
+        <h2>Hex 🔄 Decimal </h2>    
+        <div className="chipContainer">
+          <Chip
+            className="chip"
+            variant="outlined"
+            label="RGB To Decimal"
+            onClick={rgbToDecimal}
+          />
+          <Chip
+            className="chip"
+            variant="outlined"
+            label="Decimal To Rgb"
+            onClick={decimalToHex}
+          />
         </div>
+        <input required name="number" type="text" onChange={inputHandler}></input>
+        <p>{outPut}</p>
+      </CalcContainer>
     )
 }
 
