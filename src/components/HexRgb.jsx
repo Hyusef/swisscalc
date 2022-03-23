@@ -12,8 +12,6 @@ const CalcContainer = styled(Paper)`
   dispay: flex;
   flex-direction: row;
   border: 1px solid pink;
-  .chip {
-  }
 
   .chipContainer {
     display: flex;
@@ -26,21 +24,35 @@ function HexRgb() {
   const [outPut, setOutPut] = useState("");
   const [input, setInput] = useState("");
 
+  const inputHandler = (e) => {
+    setInput(e.target.value);
+  };
+
+  const hexToRgb = () => {
+    var bigint = parseInt(input, 16);
+    var r = (bigint >> 16) & 255;
+    var g = (bigint >> 8) & 255;
+    var b = bigint & 255;
+    setOutPut(r + "," + g + "," + b);
+  };
+
+  const rgbToHex = () => {};
+
   return (
     <CalcContainer>
-      <h2>Hex 🔄 Decimal </h2>    
+      <h2>Hex 🔄 Rgb </h2>    
       <div className="chipContainer">
         <Chip
           className="chip"
           variant="outlined"
-          label="RGB To Decimal"
-          onClick={rgbToDecimal}
+          label="Hex To Rgb"
+          onClick={hexToRgb}
         />
         <Chip
           className="chip"
           variant="outlined"
-          label="Decimal To Rgb"
-          onClick={decimalToHex}
+          label="Rgb To Hex"
+          onClick={rgbToHex}
         />
       </div>
       <input required name="number" type="text" onChange={inputHandler}></input>
