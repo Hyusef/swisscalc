@@ -29,7 +29,7 @@ function HexRgb() {
   };
 
   const hexToRgb = () => {
-    const regex = /^[a-f0-9]+$/;
+    const regex = /^(?:#)?[a-f0-9]+$/;
     const justDigits = input.replace("#", "");
     if (input === "" || justDigits.length !== 6 || !regex.test(input)) {
       swal("Error", "Enter A Valid Hex Number", "error");
@@ -43,6 +43,10 @@ function HexRgb() {
   };
 
   const rgbToHex = () => {
+    if (input === "" || input.length > 11) {
+      swal("Error", "Enter Valid RGB values seperated by comma", "error");
+      return;
+    }
     const rgbVals = input
       .split(/[\s,.]+/)
       .slice(0, 3)
