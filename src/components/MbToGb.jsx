@@ -7,7 +7,7 @@ import swal from "sweetalert";
 
 const CalcContainer = styled(Paper)`
   margin: 20px;
-  width: 300px;
+  width: 350px;
   text-align: center;
   dispay: flex;
   flex-direction: row;
