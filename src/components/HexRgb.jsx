@@ -31,7 +31,7 @@ function HexRgb() {
   const hexToRgb = () => {
     const regex = /^[a-f0-9]+$/;
     const justDigits = input.replace("#", "");
-    if (input === "" || justDigits.length != 6 || !regex.test(input)) {
+    if (input === "" || justDigits.length !== 6 || !regex.test(input)) {
       swal("Error", "Enter A Valid Hex Number", "error");
       return;
     }
