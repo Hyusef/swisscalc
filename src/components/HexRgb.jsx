@@ -30,9 +30,9 @@ function HexRgb() {
 
   const hexToRgb = () => {
     const regex = /^[a-f0-9]+$/;
-    const justDigits = input.replace("#","");
-    if(input==="" || justDigits.length!=6 || !regex.test(input)){
-      swal("Error","Enter A Valid Hex Number","error");
+    const justDigits = input.replace("#", "");
+    if (input === "" || justDigits.length != 6 || !regex.test(input)) {
+      swal("Error", "Enter A Valid Hex Number", "error");
       return;
     }
     var bigint = parseInt(justDigits, 16);
@@ -42,7 +42,19 @@ function HexRgb() {
     setOutPut(r + "," + g + "," + b);
   };
 
-  const rgbToHex = () => {};
+  const rgbToHex = () => {
+    const rgbVals = input
+      .split(/[\s,.]+/)
+      .slice(0, 3)
+      .map((el) =>
+        el > 255 ? (el = 255) : el < 0 ? (el = 0) : (el = parseInt(el))
+      );
+    const red = rgbVals[0].toString(16);
+    const green = rgbVals[1].toString(16);
+    const blue = rgbVals[2].toString(16);
+
+    setOutPut("#" + red + green + blue);
+  };
 
   return (
     <CalcContainer>
