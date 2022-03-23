@@ -23,9 +23,22 @@ const CalcContainer = styled(Paper)`
 
 function MbToGb() {
     return (
-        <div>
-            
+        <CalcContainer>
+        <h2>Megabytes 🔄 Gigabytes </h2>    
+        <div className="chipContainer">
+          <Chip
+            className="chip"
+            variant="outlined"
+            label="Megabytes To Gigabytes"
+          />
+          <Chip
+            className="chip"
+            variant="outlined"
+            label="Gigabytes To Megabytes"
+          />
         </div>
+        <input required name="number" type="text"></input>
+      </CalcContainer>
     )
 }
 
