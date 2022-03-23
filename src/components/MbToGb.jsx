@@ -28,6 +28,21 @@ function MbToGb() {
     setInput(e.target.value);
   };
 
+  const mbToGbHandler = () => {
+    if (input === "" || input < 0) {
+      swal("Error", "Please Enter a valid value", "error");
+      return;
+    }
+    setOutPut((+input / 1000).toFixed(2) + " Gb");
+  };
+
+  const gbToMbHandler = () => {
+    if (input === "" || input < 0) {
+      swal("Error", "Please Enter a valid value", "error");
+      return;
+    }
+    setOutPut(+input * 1000 + " Mb");
+  };
 
   return (
     <CalcContainer>
@@ -37,14 +52,21 @@ function MbToGb() {
           className="chip"
           variant="outlined"
           label="Megabytes To Gigabytes"
+          onClick={mbToGbHandler}
         />
         <Chip
           className="chip"
           variant="outlined"
           label="Gigabytes To Megabytes"
+          onClick={gbToMbHandler}
         />
       </div>
-      <input required name="number" type="text"></input>
+      <input
+        required
+        name="number"
+        type="number"
+        onChange={inputHandler}
+      ></input>
       <p>{outPut}</p>
     </CalcContainer>
   );
