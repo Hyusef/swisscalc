@@ -22,6 +22,8 @@ const CalcContainer = styled(Paper)`
 
 
 function MbToGb() {
+    const [outPut, setOutPut] = useState("");
+    const [input, setInput] = useState("");
     return (
         <CalcContainer>
         <h2>Megabytes 🔄 Gigabytes </h2>    
