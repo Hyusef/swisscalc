@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Paper from "@mui/material/Paper";
 import styled from "styled-components";
 import Chip from "@mui/material/Chip";
@@ -20,28 +20,34 @@ const CalcContainer = styled(Paper)`
   }
 `;
 
-
 function MbToGb() {
-    const [outPut, setOutPut] = useState("");
-    const [input, setInput] = useState("");
-    return (
-        <CalcContainer>
-        <h2>Megabytes 🔄 Gigabytes </h2>    
-        <div className="chipContainer">
-          <Chip
-            className="chip"
-            variant="outlined"
-            label="Megabytes To Gigabytes"
-          />
-          <Chip
-            className="chip"
-            variant="outlined"
-            label="Gigabytes To Megabytes"
-          />
-        </div>
-        <input required name="number" type="text"></input>
-      </CalcContainer>
-    )
+  const [outPut, setOutPut] = useState("");
+  const [input, setInput] = useState("");
+
+  const inputHandler = (e) => {
+    setInput(e.target.value);
+  };
+
+
+  return (
+    <CalcContainer>
+      <h2>Megabytes 🔄 Gigabytes </h2>    
+      <div className="chipContainer">
+        <Chip
+          className="chip"
+          variant="outlined"
+          label="Megabytes To Gigabytes"
+        />
+        <Chip
+          className="chip"
+          variant="outlined"
+          label="Gigabytes To Megabytes"
+        />
+      </div>
+      <input required name="number" type="text"></input>
+      <p>{outPut}</p>
+    </CalcContainer>
+  );
 }
 
-export default MbToGb
+export default MbToGb;
