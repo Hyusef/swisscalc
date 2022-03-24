@@ -61,6 +61,7 @@ function CalcCard() {
         type="number"
         onChange={inputHandler}
         onKeyPress={NonNumericalInput}
+        placeholder="Binary or Decimal"
       ></input>
       <p>{outPut}</p>
     </CalcContainer>

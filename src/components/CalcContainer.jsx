@@ -19,6 +19,7 @@ const CalcContainer = styled(Paper)`
   }
   .chip {
     margin: 5px;
+
   }
 `;
 

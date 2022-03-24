@@ -51,6 +51,7 @@ function MbToKb() {
         name="number"
         type="number"
         onChange={inputHandler}
+        placeholder="Mb or Kb"
       ></input>
       <p>{outPut}</p>
     </CalcContainer>

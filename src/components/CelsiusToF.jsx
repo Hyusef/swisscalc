@@ -1,27 +1,10 @@
 import React from "react";
-import Paper from "@mui/material/Paper";
-import styled from "styled-components";
 import Chip from "@mui/material/Chip";
 import { useState } from "react";
 import swal from "sweetalert";
+import CalcContainer from "./CalcContainer";
 
-const CalcContainer = styled(Paper)`
-  margin: 20px;
-  width: 300px;
-  text-align: center;
-  dispay: flex;
-  flex-direction: row;
-  border: 1px solid pink;
 
-  .chipContainer {
-    display: flex;
-    justify-content: space-around;
-    margin: 15px 0px;
-  }
-  input {
-    margin: 5px;
-  }
-`;
 
 function CelsiusToF() {
   const [outPut, setOutPut] = useState("");
@@ -57,7 +40,7 @@ function CelsiusToF() {
           onClick={fHandler}
         />
       </div>
-      <input required name="number" type="text" onChange={inputHandler}></input>
+      <input required name="number" type="text" onChange={inputHandler} placeholder="Celsius or Fahrenheit"></input>
       <p>{outPut}</p>
     </CalcContainer>
   );
