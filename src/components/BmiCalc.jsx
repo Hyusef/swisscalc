@@ -22,6 +22,7 @@ function BmiCalc() {
   const bmiHandler = (e) => {
     if (weight === "" || height === "") {
       swal("Error", "Please enter height and width", "error");
+      return;
     }
 
     setOutPut(

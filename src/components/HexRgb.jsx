@@ -27,7 +27,8 @@ function HexRgb() {
   };
 
   const rgbToHex = () => {
-    if (input === "" || input.length > 11) {
+    const regex=/^[0-9\s,.]+$/
+    if (input === "" || input.length > 11 || !regex.test(input)) {
       swal("Error", "Enter Valid RGB values seperated by comma", "error");
       return;
     }

@@ -19,8 +19,11 @@ function DownloadCalc() {
   };
 
   const chipHandler = (e) => {
-    if (speed === "" || size === "") {
+    const regex = /^\d+$/;
+
+    if (speed === "" || size === ""||!regex.test(speed) || !regex.test(size)) {
       swal("Error", "Enter A Speed and size", "error");
+      return;
     }
 
     setOutPut((size * 1000) / (speed / 8) + " seconds");

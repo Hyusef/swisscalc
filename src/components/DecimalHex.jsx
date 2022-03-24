@@ -17,7 +17,7 @@ function DecimalHex() {
     const regex = /^(?:#)?[a-f0-9]+$/;
     const justDigits = input.replace("#", "");
     if (input === "" || !regex.test(input) || digits[0] === 0) {
-      swal("Error", "Please Enter A Valid Decimal Number", "Error");
+      swal("Error", "Please Enter A Valid Decimal Number", "error");
       return;
     }
     setOutPut(parseInt(justDigits, 16));
