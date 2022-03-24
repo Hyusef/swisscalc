@@ -4,8 +4,6 @@ import { useState } from "react";
 import swal from "sweetalert";
 import CalcContainer from "./CalcContainer";
 
-
-
 function CelsiusToF() {
   const [outPut, setOutPut] = useState("");
   const [input, setInput] = useState("");
@@ -14,12 +12,30 @@ function CelsiusToF() {
     setInput(e.target.value);
   };
   const celsiusHandler = () => {
-    setOutPut( +input*1.8+32+" F");
+    const regex = /^(?:-)?\d+$/;
+    if (input === "" || !regex.test(input)) {
+      swal(
+        "Error",
+        "Please Enter A valid Celsius or Fahrenheit value",
+        "error"
+      );
+      return;
+    }
+    setOutPut(+input * 1.8 + 32 + " F");
     return;
   };
 
   const fHandler = () => {
-    setOutPut(((+input-32)/1.8).toFixed+" °C");
+    const regex = /^(?:-)?\d+$/;
+    if (input === "" || !regex.test(input)) {
+      swal(
+        "Error",
+        "Please Enter A valid Celsius or Fahrenheit value",
+        "error"
+      );
+      return;
+    }
+    setOutPut(((+input - 32) / 1.8).toFixed(2) + " °C");
     return;
   };
 
@@ -40,7 +56,13 @@ function CelsiusToF() {
           onClick={fHandler}
         />
       </div>
-      <input required name="number" type="text" onChange={inputHandler} placeholder="Celsius or Fahrenheit"></input>
+      <input
+        required
+        name="number"
+        type="text"
+        onChange={inputHandler}
+        placeholder="Celsius or Fahrenheit"
+      ></input>
       <p>{outPut}</p>
     </CalcContainer>
   );
