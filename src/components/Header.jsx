@@ -45,16 +45,31 @@ const Headers = styled.h1`
   font-size: 4rem;
   color: white;
   font-family: "Source Serif Pro", serif;
+  @media screen and (max-width: 925px) {
+  font-size:3.5rem;
+  }
+  @media screen and (max-width: 809px) {
+    font-size:2.7rem;
+    }
+  
 `;
 
 const HeadersContainer = styled.div`
   margin-top: 10%;
+  @media screen and (max-width: 925px) {
+    margin-top:25%;
+    }
+  
   p {
     color: #ffffff;
     font-size: 1.8rem;
     font-weight: 300;
     font-family: "Source Serif Pro", serif;
     text-align: center;
+    @media screen and (max-width: 925px) {
+      font-size:1.3rem;
+      }
+    
   }
 `;
 
