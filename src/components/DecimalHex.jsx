@@ -15,7 +15,7 @@ function DecimalHex() {
   };
 
   const HexToDecimal = () => {
-    const regex = /^[a-f0-9]+$/;
+    const regex = /^(?:#)?[a-f0-9]+$/;
     if (input === "" || !regex.test(input) || digits[0] === 0) {
       swal("Error", "Please Enter A Valid Decimal Number", "Error");
       return;
