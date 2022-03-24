@@ -40,7 +40,7 @@ function KelvinToC() {
           onClick={celsiusHandler}
         />
       </div>
-      <input required name="number" type="text" onChange={inputHandler}></input>
+      <input required name="number" type="text" onChange={inputHandler} placeholder="Kelvin or Celsius"></input>
       <p>{outPut}</p>
     </CalcContainer>
   );

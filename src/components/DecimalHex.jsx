@@ -49,7 +49,7 @@ function DecimalHex() {
           onClick={DecimalToHex}
         />
       </div>
-      <input required name="number" type="text" onChange={inputHandler}></input>
+      <input required name="number" type="text" onChange={inputHandler} placeholder="Decimal or Hex"></input>
       <p>{outPut}</p>
     </CalcContainer>
   );

@@ -52,6 +52,7 @@ function MbToGb() {
         name="number"
         type="number"
         onChange={inputHandler}
+        placeholder="Mb or Gb"
       ></input>
       <p>{outPut}</p>
     </CalcContainer>
