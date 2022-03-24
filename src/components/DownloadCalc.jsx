@@ -28,6 +28,20 @@ const CalcContainer = styled(Paper)`
 `;
 
 function DownloadCalc() {
+    const [outPut, setOutPut] = useState("");
+    const [speed,setSpeed] = useState("");
+    const [size, setSize] = useState("");
+
+    const speedHandler = (e)=>{
+        setSpeed(e.target.value);
+    }
+
+    const sizeHandler = (e)=>{
+        setSize(e.target.value);
+    }
+
+
+
   return (
     <CalcContainer>
       <h2>Download Time Calculator </h2>    
@@ -37,12 +51,14 @@ function DownloadCalc() {
           name="number"
           type="text"
           placeholder="Download speed in Mbps"
+          onChange={speedHandler}
         ></input>
         <input
           required
           name="number"
           type="text"
           placeholder="File size in Gb"
+          onChange={sizeHandler}
         ></input>
 
         <Chip className="chip" variant="outlined" label="Calculate" />
