@@ -28,19 +28,25 @@ const CalcContainer = styled(Paper)`
 `;
 
 function DownloadCalc() {
-    const [outPut, setOutPut] = useState("");
-    const [speed,setSpeed] = useState("");
-    const [size, setSize] = useState("");
+  const [outPut, setOutPut] = useState("");
+  const [speed, setSpeed] = useState("");
+  const [size, setSize] = useState("");
 
-    const speedHandler = (e)=>{
-        setSpeed(e.target.value);
+  const speedHandler = (e) => {
+    setSpeed(e.target.value);
+  };
+
+  const sizeHandler = (e) => {
+    setSize(e.target.value);
+  };
+
+  const chipHandler = (e) => {
+    if (speed === "" || size === "") {
+      swal("Error", "Enter A Speed and size", "error");
     }
 
-    const sizeHandler = (e)=>{
-        setSize(e.target.value);
-    }
-
-
+    setOutPut((size * 1000) / (speed / 8) + "seconds");
+  };
 
   return (
     <CalcContainer>
@@ -61,8 +67,14 @@ function DownloadCalc() {
           onChange={sizeHandler}
         ></input>
 
-        <Chip className="chip" variant="outlined" label="Calculate" />
+        <Chip
+          className="chip"
+          variant="outlined"
+          label="Calculate"
+          onClick={chipHandler}
+        />
       </div>
+      <p>{outPut}</p>
     </CalcContainer>
   );
 }
