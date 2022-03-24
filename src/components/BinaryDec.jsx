@@ -1,26 +1,8 @@
 import * as React from "react";
-import Paper from "@mui/material/Paper";
-import styled from "styled-components";
 import Chip from "@mui/material/Chip";
 import { useState } from "react";
 import swal from "sweetalert";
-import { motion } from "framer-motion";
-
-const CalcContainer = styled(Paper)`
-  width: 300px;
-  text-align: center;
-  dispay: flex;
-  flex-direction: row;
-  border: 1px solid pink;
-  .chip {
-  }
-
-  .chipContainer {
-    display: flex;
-    justify-content: space-around;
-    margin: 15px 0px;
-  }
-`;
+import CalcContainer from "./CalcContainer";
 
 function CalcCard() {
   const [outPut, setOutPut] = useState("");
@@ -42,7 +24,7 @@ function CalcCard() {
   };
 
   const DecimalToBinary = () => {
-    if (input === "" || digits[0] == 0) {
+    if (input === "" || digits[0] === 0) {
       swal("Error", "Please Enter A Decimal Number", "error");
       return;
     }

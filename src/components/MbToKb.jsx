@@ -1,24 +1,10 @@
 import React from "react";
-import Paper from "@mui/material/Paper";
-import styled from "styled-components";
 import Chip from "@mui/material/Chip";
 import { useState } from "react";
 import swal from "sweetalert";
+import CalcContainer from "./CalcContainer";
 
-const CalcContainer = styled(Paper)`
-  margin: 20px;
-  width: 350px;
-  text-align: center;
-  dispay: flex;
-  flex-direction: row;
-  border: 1px solid pink;
 
-  .chipContainer {
-    display: flex;
-    justify-cntent: space-around;
-    margin: 15px 0px;
-  }
-`;
 
 function MbToKb() {
   const [outPut, setOutPut] = useState("");
