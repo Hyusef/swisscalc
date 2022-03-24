@@ -13,6 +13,11 @@ function StepsToCals() {
     setInput(e.target.value);
   };
   const stepsHandler = () => {
+    const regex = /^\d+$/; 
+    if (input === "" || !regex.test(input)) {
+      swal("Error", "Please Enter An Integer", "error");
+      return;
+    }
     setOutPut("≈ "+ +input / 25 + " calories burned");
     return;
   };
