@@ -3,6 +3,7 @@ import Chip from "@mui/material/Chip";
 import { useState } from "react";
 import swal from "sweetalert";
 import CalcContainer from "./CalcContainer";
+import { motion } from "framer-motion";
 
 function DecimalHex() {
   const [outPut, setOutPut] = useState("");
@@ -33,31 +34,33 @@ function DecimalHex() {
   };
 
   return (
-    <CalcContainer>
-      <h2>Hex 🔄 Decimal </h2>    
-      <div className="chipContainer">
-        <Chip
-          className="chip"
-          variant="outlined"
-          label="Hex To Decimal"
-          onClick={HexToDecimal}
-        />
-        <Chip
-          className="chip"
-          variant="outlined"
-          label="Decimal To Hex"
-          onClick={DecimalToHex}
-        />
-      </div>
-      <input
-        required
-        name="number"
-        type="text"
-        onChange={inputHandler}
-        placeholder="Decimal or Hex"
-      ></input>
-      <p>{outPut}</p>
-    </CalcContainer>
+    <motion.div whileHover={{ scale: 1.1 }}>
+      <CalcContainer>
+        <h2>Hex 🔄 Decimal </h2>    
+        <div className="chipContainer">
+          <Chip
+            className="chip"
+            variant="outlined"
+            label="Hex To Decimal"
+            onClick={HexToDecimal}
+          />
+          <Chip
+            className="chip"
+            variant="outlined"
+            label="Decimal To Hex"
+            onClick={DecimalToHex}
+          />
+        </div>
+        <input
+          required
+          name="number"
+          type="text"
+          onChange={inputHandler}
+          placeholder="Decimal or Hex"
+        ></input>
+        <p>{outPut}</p>
+      </CalcContainer>
+    </motion.div>
   );
 }
 

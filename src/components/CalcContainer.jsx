@@ -8,6 +8,7 @@ const CalcContainer = styled(Paper)`
   flex-direction: row;
   border: 1px solid pink;
 
+
   .chipContainer {
     display: flex;
     justify-content: space-around;

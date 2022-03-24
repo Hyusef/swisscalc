@@ -3,6 +3,7 @@ import Chip from "@mui/material/Chip";
 import { useState } from "react";
 import swal from "sweetalert";
 import CalcContainer from "./CalcContainer";
+import {motion} from "framer-motion";
 
 function CelsiusToF() {
   const [outPut, setOutPut] = useState("");
@@ -40,6 +41,8 @@ function CelsiusToF() {
   };
 
   return (
+    <motion.div
+    whileHover={{scale:1.1}}>
     <CalcContainer>
       <h2>Celsius 🔄 Fahrenheit </h2>    
       <div className="chipContainer">
@@ -65,6 +68,7 @@ function CelsiusToF() {
       ></input>
       <p>{outPut}</p>
     </CalcContainer>
+    </motion.div>
   );
 }
 export default CelsiusToF;

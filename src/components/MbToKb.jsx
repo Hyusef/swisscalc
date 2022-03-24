@@ -3,6 +3,7 @@ import Chip from "@mui/material/Chip";
 import { useState } from "react";
 import swal from "sweetalert";
 import CalcContainer from "./CalcContainer";
+import {motion} from "framer-motion";
 
 
 
@@ -30,6 +31,9 @@ function MbToKb() {
     setOutPut(+input / 1000 + " Mb");
   };
   return (
+    <motion.div
+    whileHover={{scale:1.1}}
+    >
     <CalcContainer>
       <h2>Megabytes 🔄 Kilobytes </h2>    
       <div className="chipContainer">
@@ -55,6 +59,7 @@ function MbToKb() {
       ></input>
       <p>{outPut}</p>
     </CalcContainer>
+    </motion.div>
   );
 }
 

@@ -3,6 +3,7 @@ import Chip from "@mui/material/Chip";
 import { useState } from "react";
 import swal from "sweetalert";
 import CalcContainer from "./CalcContainer";
+import { motion } from "framer-motion";
 
 function CalcCard() {
   const [outPut, setOutPut] = useState("");
@@ -39,32 +40,34 @@ function CalcCard() {
   };
 
   return (
-    <CalcContainer>
-      <h2>Binary 🔄 Decimal </h2>    
-      <div className="chipContainer">
-        <Chip
-          className="chip"
-          variant="outlined"
-          label="Binary To Decimal"
-          onClick={BinaryToDecimal}
-        />
-        <Chip
-          className="chip"
-          variant="outlined"
-          label="Decimal To Binary"
-          onClick={DecimalToBinary}
-        />
-      </div>
-      <input
-        required
-        name="number"
-        type="number"
-        onChange={inputHandler}
-        onKeyPress={NonNumericalInput}
-        placeholder="Binary or Decimal"
-      ></input>
-      <p>{outPut}</p>
-    </CalcContainer>
+    <motion.div whileHover={{ scale: 1.1 }}>
+      <CalcContainer>
+        <h2>Binary 🔄 Decimal </h2>    
+        <div className="chipContainer">
+          <Chip
+            className="chip"
+            variant="outlined"
+            label="Binary To Decimal"
+            onClick={BinaryToDecimal}
+          />
+          <Chip
+            className="chip"
+            variant="outlined"
+            label="Decimal To Binary"
+            onClick={DecimalToBinary}
+          />
+        </div>
+        <input
+          required
+          name="number"
+          type="number"
+          onChange={inputHandler}
+          onKeyPress={NonNumericalInput}
+          placeholder="Binary or Decimal"
+        ></input>
+        <p>{outPut}</p>
+      </CalcContainer>
+    </motion.div>
   );
 }
 

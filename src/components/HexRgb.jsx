@@ -3,6 +3,7 @@ import Chip from "@mui/material/Chip";
 import { useState } from "react";
 import swal from "sweetalert";
 import CalcContainer from "./CalcContainer";
+import { motion } from "framer-motion";
 
 function HexRgb() {
   const [outPut, setOutPut] = useState("");
@@ -27,7 +28,7 @@ function HexRgb() {
   };
 
   const rgbToHex = () => {
-    const regex=/^[0-9\s,.]+$/
+    const regex = /^[0-9\s,.]+$/;
     if (input === "" || input.length > 11 || !regex.test(input)) {
       swal("Error", "Enter Valid RGB values seperated by comma", "error");
       return;
@@ -46,25 +47,33 @@ function HexRgb() {
   };
 
   return (
-    <CalcContainer>
-      <h2>Hex 🔄 Rgb </h2>    
-      <div className="chipContainer">
-        <Chip
-          className="chip"
-          variant="outlined"
-          label="Hex To Rgb"
-          onClick={hexToRgb}
-        />
-        <Chip
-          className="chip"
-          variant="outlined"
-          label="Rgb To Hex"
-          onClick={rgbToHex}
-        />
-      </div>
-      <input required name="number" type="text" onChange={inputHandler} placeholder="Hex or RGB"></input>
-      <p>{outPut}</p>
-    </CalcContainer>
+    <motion.div whileHover={{ scale: 1.1 }}>
+      <CalcContainer>
+        <h2>Hex 🔄 Rgb </h2>    
+        <div className="chipContainer">
+          <Chip
+            className="chip"
+            variant="outlined"
+            label="Hex To Rgb"
+            onClick={hexToRgb}
+          />
+          <Chip
+            className="chip"
+            variant="outlined"
+            label="Rgb To Hex"
+            onClick={rgbToHex}
+          />
+        </div>
+        <input
+          required
+          name="number"
+          type="text"
+          onChange={inputHandler}
+          placeholder="Hex or RGB"
+        ></input>
+        <p>{outPut}</p>
+      </CalcContainer>
+    </motion.div>
   );
 }
 

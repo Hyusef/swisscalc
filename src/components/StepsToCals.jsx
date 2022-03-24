@@ -3,6 +3,7 @@ import Chip from "@mui/material/Chip";
 import { useState } from "react";
 import swal from "sweetalert";
 import CalcContainer from "./CalcContainer";
+import {motion} from "framer-motion";
 
 
 function StepsToCals() {
@@ -23,6 +24,10 @@ function StepsToCals() {
   };
 
   return (
+    <motion.div
+    whileHover={{scale:1.1
+    }}
+    >
     <CalcContainer>
       <h2>Pedometer Steps To Calories </h2>    
       <div className="chipContainer">
@@ -42,6 +47,7 @@ function StepsToCals() {
       </div>
       <p>{outPut}</p>
     </CalcContainer>
+    </motion.div>
   );
 }
 
