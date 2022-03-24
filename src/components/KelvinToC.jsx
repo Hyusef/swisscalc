@@ -4,23 +4,31 @@ import { useState } from "react";
 import swal from "sweetalert";
 import CalcContainer from "./CalcContainer";
 
-
-
 function KelvinToC() {
   const [outPut, setOutPut] = useState("");
   const [input, setInput] = useState("");
+  const regex = /^(?:-)?\d+$/;
+  const message = "Please enter a valid Kelvin or Celsius Value";
 
   const inputHandler = (e) => {
     setInput(e.target.value);
   };
   const kelvinHandler = () => {
+    console.log(input)
+    if (input === "" || !regex.test(input)) {
+      swal("Error", message, "error");
+      return;
+    }
+
     setOutPut((input - 273.15).toFixed(2) + " °C");
-    return;
   };
 
   const celsiusHandler = () => {
+    if (input === "" || !regex.test(input)) {
+      swal("Error", message, "error");
+      return;
+    }
     setOutPut((+input + 273.15).toFixed(2) + " K");
-    return;
   };
 
   return (
@@ -40,7 +48,13 @@ function KelvinToC() {
           onClick={celsiusHandler}
         />
       </div>
-      <input required name="number" type="text" onChange={inputHandler} placeholder="Kelvin or Celsius"></input>
+      <input
+        required
+        name="number"
+        type="text"
+        onChange={inputHandler}
+        placeholder="Kelvin or Celsius"
+      ></input>
       <p>{outPut}</p>
     </CalcContainer>
   );

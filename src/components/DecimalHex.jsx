@@ -4,7 +4,6 @@ import { useState } from "react";
 import swal from "sweetalert";
 import CalcContainer from "./CalcContainer";
 
-
 function DecimalHex() {
   const [outPut, setOutPut] = useState("");
   const [input, setInput] = useState("");
@@ -16,11 +15,12 @@ function DecimalHex() {
 
   const HexToDecimal = () => {
     const regex = /^(?:#)?[a-f0-9]+$/;
+    const justDigits = input.replace("#", "");
     if (input === "" || !regex.test(input) || digits[0] === 0) {
       swal("Error", "Please Enter A Valid Decimal Number", "Error");
       return;
     }
-    setOutPut(parseInt(input, 16));
+    setOutPut(parseInt(justDigits, 16));
   };
 
   const DecimalToHex = () => {
@@ -49,7 +49,13 @@ function DecimalHex() {
           onClick={DecimalToHex}
         />
       </div>
-      <input required name="number" type="text" onChange={inputHandler} placeholder="Decimal or Hex"></input>
+      <input
+        required
+        name="number"
+        type="text"
+        onChange={inputHandler}
+        placeholder="Decimal or Hex"
+      ></input>
       <p>{outPut}</p>
     </CalcContainer>
   );
