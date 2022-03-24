@@ -36,7 +36,7 @@ function CelsiusToF() {
   };
 
   const fHandler = () => {
-    setOutPut(((+input-32)/1.8).toFixed(2)+" °C");
+    setOutPut(((+input-32)/1.8).toFixed+" °C");
     return;
   };
 
