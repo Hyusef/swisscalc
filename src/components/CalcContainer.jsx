@@ -20,8 +20,8 @@ const CalcContainer = styled(Paper)`
   }
   .chip {
     margin: 5px;
-
   }
+  overflow:scroll;
 `;
 
 export default CalcContainer
