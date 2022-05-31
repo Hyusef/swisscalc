@@ -3,10 +3,6 @@ import Navbar from "./Navbar";
 import styled from "styled-components";
 import Particles from "react-tsparticles";
 
-
-
-
-
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -43,7 +39,7 @@ const Imgu = styled.img`
 
 const Headers = styled.h1`
   font-size: 4rem;
-  color: white;
+  color: white;w
   font-family: "Source Serif Pro", serif;
   @media screen and (max-width: 925px) {
   font-size:3.5rem;
@@ -131,7 +127,7 @@ function Header() {
       <Navbar />
       <HeadersContainer>
         <Headers>Multi-purpose Swiss Calculator</Headers>
-        <p>Just like the Swiss knife, the Swiss calc™ is a powerful tool.</p>
+        <p>Just like the Swiss knife, the Swisscalc™ is a powerful tool.</p>
       </HeadersContainer>
     </HeaderContainer>
 
