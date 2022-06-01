@@ -1,4 +1,4 @@
-import Chip from '@material-ui/core/Chip';;
+import Chip from '@material-ui/core/Chip';
 import { useState } from "react";
 import swal from "sweetalert";
 import CalcContainer from "./CalcContainer";
