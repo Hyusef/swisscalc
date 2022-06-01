@@ -31,10 +31,7 @@ const HeaderContainer = styled.div`
 }
 `;
 
-const Imgu = styled.img`
-  width: 70%;
-  margin: 15%;
-`;
+
 
 const Headers = styled.h1`
   font-size: 4rem;
