@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Paper from "@mui/material/Paper";
+import Paper from "@material-ui/core/Paper";
 const CalcContainer = styled(Paper)`
   margin: 20px;
   width: 300px;
